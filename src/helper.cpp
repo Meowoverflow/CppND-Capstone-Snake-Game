@@ -5,7 +5,7 @@
 
 #include "helper.h"
 
-int Helper::GetHighestScore() {
+int Helper::GetHighestScore()  {
     string line;
     int hScore;
     std::ifstream filestream(kDataDirectory+kHighestScoreFileName);
@@ -17,7 +17,7 @@ int Helper::GetHighestScore() {
     }
     return 0;
 }
-void Helper::SetHighestScore(int score) {
+void Helper::SetHighestScore(const int score) {
     std::ofstream ofs(kDataDirectory+kHighestScoreFileName, std::ofstream::trunc);
     ofs << std::to_string(score);
     ofs.close();

@@ -13,8 +13,8 @@ using std::string;
 namespace Helper {
     const std::string kDataDirectory{"../data"};
     const std::string kHighestScoreFileName{"/highest_score.txt"};
-    int GetHighestScore();
-    void SetHighestScore(int score);
+    int GetHighestScore() ;
+    void SetHighestScore(const int score);
     void ResetHighestScoreFile();
 
 }

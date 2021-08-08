@@ -6,6 +6,7 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "helper.h"
 
 class Game {
  public:
@@ -13,8 +14,9 @@ class Game {
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
   int GetScore() const;
+  int GetHighestScore() const;
   int GetSize() const;
-
+  void SetHighestScore(const int score);
  private:
   Snake snake;
   SDL_Point food;

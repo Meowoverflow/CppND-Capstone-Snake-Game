@@ -6,7 +6,8 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width - 1)),
-      random_h(0, static_cast<int>(grid_height - 1)) {
+      random_h(0, static_cast<int>(grid_height - 1)),
+      _highest_score(Helper::GetHighestScore()){
   PlaceFood();
 }
 
@@ -76,6 +77,8 @@ void Game::Update() {
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
     score++;
+    if(score > _highest_score)
+        SetHighestScore(score);
     PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
@@ -84,4 +87,12 @@ void Game::Update() {
 }
 
 int Game::GetScore() const { return score; }
+int Game::GetHighestScore() const { return _highest_score; }
 int Game::GetSize() const { return snake.size; }
+
+void Game::SetHighestScore(const int score) {
+    if(score > _highest_score) {
+        _highest_score = score; //update  member
+        Helper::SetHighestScore(score); //update data/highest_score.txt file
+    }
+}
