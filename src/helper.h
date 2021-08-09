@@ -16,11 +16,10 @@ namespace Helper {
     const std::string kHighestScoreFileName{"/highest_score.txt"};
     const std::string kSoundEffectMusicFileName{"/arpanauts.ogg"};
     const std::string kSoundEffectHitFileName{"/hit.wav"};
-    const std::string kSoundEffectJumpFileName{"/jump.wav"};
+    const std::string kSoundEffectGrowFileName{"/grow.wav"};
     int GetHighestScore() ;
     void SetHighestScore(const int score);
     void ResetHighestScoreFile();
-
 }
 
 #endif //SDL2TEST_HELPER_H

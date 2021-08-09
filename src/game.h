@@ -7,6 +7,7 @@
 #include "renderer.h"
 #include "snake.h"
 #include "helper.h"
+#include "sound_effect.h"
 
 class Game {
  public:
@@ -28,6 +29,7 @@ class Game {
 
   int score{0};
   int _highest_score;
+  SoundEffect soundEffect;
 
   void PlaceFood();
   void Update();

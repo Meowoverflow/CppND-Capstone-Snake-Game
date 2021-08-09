@@ -10,6 +10,7 @@
 #include "SDL.h"
 #include "SDL_mixer.h"
 #include "helper.h"
+
 class SoundEffect {
 public:
     SoundEffect();
@@ -17,9 +18,13 @@ public:
 
     void PlayMusic();
     void PlayHitEffect();
+    void PlayGrowEffect();
+    void PauseMusic();
+    void ResumeMusic();
 
 private:
     Mix_Music *_music;
     Mix_Chunk *_hitEffect;
+    Mix_Chunk *_growEffect;
 };
 #endif //SDL2TEST_SOUND_EFFECT_H

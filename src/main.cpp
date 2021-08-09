@@ -13,8 +13,8 @@ int main() {
   constexpr std::size_t kGridHeight{32};
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  SoundEffect soundEffect;
-  soundEffect.PlayMusic();
+  //auto soundEffect = new SoundEffect;
+  //soundEffect->PlayMusic();
 
   Controller controller;
   Game game(kGridWidth, kGridHeight);

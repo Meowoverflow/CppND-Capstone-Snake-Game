@@ -9,6 +9,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
       random_h(0, static_cast<int>(grid_height - 1)),
       _highest_score(Helper::GetHighestScore()){
   PlaceFood();
+  soundEffect.PlayMusic();
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -67,7 +68,7 @@ void Game::PlaceFood() {
 }
 
 void Game::Update() {
-  if (!snake.alive) return;
+  if (!snake.alive)  return;
 
   snake.Update();
 
@@ -76,13 +77,19 @@ void Game::Update() {
 
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) {
-    score++;
-    if(score > _highest_score)
+
+      soundEffect.PauseMusic();
+      soundEffect.PlayGrowEffect();
+      score++;
+      soundEffect.ResumeMusic();
+
+
+      if(score > _highest_score)
         SetHighestScore(score);
-    PlaceFood();
+      PlaceFood();
     // Grow snake and increase speed.
-    snake.GrowBody();
-    snake.speed += 0.02;
+      snake.GrowBody();
+      snake.speed += 0.02;
   }
 }
 
