@@ -2,6 +2,7 @@
 #include "controller.h"
 #include "game.h"
 #include "renderer.h"
+#include "sound_effect.h"
 
 int main() {
   constexpr std::size_t kFramesPerSecond{60};
@@ -12,6 +13,9 @@ int main() {
   constexpr std::size_t kGridHeight{32};
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  SoundEffect soundEffect;
+  soundEffect.PlayMusic();
+
   Controller controller;
   Game game(kGridWidth, kGridHeight);
   game.Run(controller, renderer, kMsPerFrame);
