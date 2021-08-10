@@ -17,6 +17,20 @@ In this project I've extended this Snake game, following the principles I've thr
 6. cmake/FindSDL2.cmake and FindSDL2_mixer -> to link SDL_mixer.
 7. CMakeLists.txt -> to use SDL2_mixer.
 
+---------------------------------------
+Criteria      | Meets Specifications, file(line#)
+------------- | -------------
+The project demonstrates an understanding of C++ functions and control structures.  | A variety of control structures are used in the project.The project code is clearly organized into functions. almost in every file 
+The project reads data from a file and process the data, or the program writes data to a file.  | The project reads data from an external file or writes data to a file as part of the necessary operation of the program. helper.cpp(8 , 28)
+The project accepts user input and processes the input.  | The project accepts user input and processes the input. controller.cpp(14)
+The project uses Object Oriented Programming techniques.  | The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+Classes use appropriate access specifiers for class members.  |All class data members are explicitly specified as public, protected, or private. game.h , controller.h , sound_effect.h , snake.h , renderer.h
+Class constructors utilize member initialization lists.  | All class members that are set to argument values are initialized through member initialization lists.
+Classes abstract implementation details from their interfaces.  | All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
+Classes encapsulate behavior. | Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user. State is accessed via member functions. (like sound_effect.h-.cpp)
+The project uses destructors appropriately.  | sound_effect.h-.cpp At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.
+
+
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -28,7 +42,7 @@ In this project I've extended this Snake game, following the principles I've thr
 * SDL2 >= 2.0
   * All installation instructions can be found [here](https://wiki.libsdl.org/Installation)
   >Note that for Linux, an `apt` or `apt-get` installation is preferred to building from source. 
-* SDL2_Mixer(optional if you want the full nostalgia)
+* SDL2_Mixer(optional if you want the full nostalgia) installation instructions can be found [here](https://www.libsdl.org/projects/SDL_mixer)
   >Note to install for linux use `sudo apt install libsdl2-mixer-dev`
 * gcc/g++ >= 5.4
   * Linux: gcc / g++ is installed by default on most Linux distros
