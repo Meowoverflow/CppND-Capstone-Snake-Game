@@ -1,12 +1,22 @@
 # CPPND: Capstone Snake Game Example
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This is my repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+----------------------------------
+In this project I've extended this Snake game, following the principles I've throughout this Nanodegree Program.
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+------------------------
+## Changed/Added files and directories.
+1. src/sound_effect.h-.cpp -> contains `SoundEffect` Class that manages background music and sound effect for eating food by using SDL2_mixer. 
+2. src/helper.h-.cpp -> contains `Helper` namespace as there are paths constants and other helper functions.
+3. data/highest_score.txt -> contains highest score the player reached.
+4. src/game.h-.cpp -> added features (music, sound effects and storing highest score) to the game. (refer to commit #b7b3269b935700668d22f84a05a96caad81d4ee3)
+5. src/renderer.h-.cpp -> updated `UpdateWindowTitle` function to display highest score with current score on window title bar like this `current_score/highest_score`
+6. cmake/FindSDL2.cmake and FindSDL2_mixer -> to link SDL_mixer.
+7. CMakeLists.txt -> to use SDL2_mixer.
+
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -25,6 +35,8 @@ In this project, you can build your own C++ application or extend this Snake gam
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 
+----------------------------------
+
 ## Basic Build Instructions
 
 1. Clone this repo.
@@ -32,6 +44,7 @@ In this project, you can build your own C++ application or extend this Snake gam
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
 
+-----------------------------
 
 ## CC Attribution-ShareAlike 4.0 International
 
